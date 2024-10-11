@@ -6,9 +6,6 @@ github-repo: EricMarcon/Course-git
 url: https://EricMarcon.github.io/Course-git/
 urlcolor: blue
 output:
-  bookdown::ioslides_presentation2:
-    logo: images/logo.png
-    widescreen: yes
   bookdown::beamer_presentation2:
     latex_engine: xelatex
     includes:
@@ -19,6 +16,9 @@ output:
     toc: no
     fig_caption: no
     keep_tex: no
+  bookdown::ioslides_presentation2:
+    logo: images/logo.png
+    widescreen: yes
 ---
 
 ```{r DoNotModify, include=FALSE}
@@ -103,7 +103,7 @@ GitHub is a collaboration platform based on Git.
 
 # Installation
 
-## git
+## git: install
 
 RStudio must detect Git
 
@@ -112,6 +112,8 @@ knitr::include_graphics("images/r_options.png")
 ```
 
 Otherwise, install it.
+
+In RStudio, Tools / Global Options set new Terminals to GitBash.
 
 
 ## GitHub
@@ -123,9 +125,18 @@ knitr::include_graphics("images/GitHub_accueil.png")
 ```
 
 
-## GitHub security
+## GitHub security 1
 
-Create a GitHub token:
+Your computer must be able to write to git.
+
+In RStudio, Tools / Global Options/ Git-SVN, create a new SSH key.
+
+Copy the private key to GitHub, your accounts, Settings, SSH and GPG keys.
+
+
+## GitHub security 2
+
+Create a GitHub token for CI:
 
 - User account settings;
 - Developer Settings > Personal Access Tokens;
