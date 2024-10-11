@@ -1,4 +1,4 @@
-# Source control with git and Github - Some text
+# Source control with git and Github
 
 Formats:
 
