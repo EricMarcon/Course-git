@@ -153,7 +153,7 @@ From scratch:
 - In GitHub:
   - _New Repository_
   - Choose name (no special characters)
-  - Add an appropriate _.gitgnore_.
+  - Do not add anything else
 
 - Copy the URL from _Clone or Download_.
 
