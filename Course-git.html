@@ -3221,7 +3221,7 @@ line-height: 1.9;
 <li>Add an appropriate <em>.gitgnore</em>.</li>
 </ul></li>
 <li><p>Copy the URL from <em>Clone or Download</em>.</p></li>
-<li><p>In RStudio: new project from Git, paste URL.</p></li>
+<li><p>In RStudio: New project / Version Control / Git, paste the URL.</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Create a project</h2></hgroup><article  id="create-a-project-1">
@@ -3240,6 +3240,7 @@ line-height: 1.9;
 </ul>
 
 <pre >git remote add origin https://github.com/MyAccount/MyRepo.git
+git branch -M master
 git push -u origin master</pre>
 
 </article></slide><slide class=""><hgroup><h2>Basic operations: filter</h2></hgroup><article  id="basic-operations-filter">
@@ -3334,8 +3335,8 @@ git push -u origin master</pre>
 <p>Application :</p>
 
 <ul>
-<li>develop new functionality ;</li>
-<li>test it, correct bugs ;</li>
+<li>develop new functionality,</li>
+<li>test it, correct bugs,</li>
 <li>make it visible when finished.</li>
 </ul>
 
@@ -3351,7 +3352,7 @@ git push -u origin master</pre>
 
 <p>Run:</p>
 
-<pre >git merge branch_a_merge</pre>
+<pre >git merge branch_to_merge</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Fork and Pull Request</h2></hgroup><article  id="fork-and-pull-request">
 
@@ -3404,6 +3405,7 @@ git push -u origin master</pre>
 <p>Copy the commands to upload an existing git repo:</p>
 
 <pre >git remote add origin https://github.com/MyAccount/MyRepo.git
+git branch -M master
 git push -u origin master</pre>
 
 </article></slide><slide class=""><hgroup><h2>Declare repo in header</h2></hgroup><article  id="declare-repo-in-header">
@@ -3416,11 +3418,22 @@ git push -u origin master</pre>
 
 <pre >memoiR::build_readme()</pre>
 
-<p>Commit</p>
+<p>Commit.</p>
 
-</article></slide><slide class=""><hgroup><h2>Activate CI</h2></hgroup><article  id="activate-ci">
+</article></slide><slide class=""><hgroup><h2>Continuous integration</h2></hgroup><article  id="continuous-integration">
 
-<p>run</p>
+<p>On GitHub, your repo, Settings / Secrets and variables / Action :</p>
+
+<ul>
+<li>Add two secrets:
+
+<ul>
+<li>EMAIL: your email address</li>
+<li>GH_PAT: your personal access token</li>
+</ul></li>
+</ul>
+
+<p>In RStudio, run</p>
 
 <pre >memoiR::build_ghworkflow()</pre>
 
