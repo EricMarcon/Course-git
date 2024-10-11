@@ -3,8 +3,8 @@ title: 'Source control with git and Github'
 author: "Eric Marcon"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 github-repo: EricMarcon/Course-git
-urlcolor: blue
 url: https://EricMarcon.github.io/Course-git/
+urlcolor: blue
 output:
   bookdown::ioslides_presentation2:
     logo: images/logo.png
@@ -146,7 +146,7 @@ From scratch:
 
 - Copy the URL from _Clone or Download_.
 
-- In RStudio: new project from Git, paste URL.
+- In RStudio: New project / Version Control / Git, paste the URL.
 
 
 ## Create a project
@@ -163,6 +163,7 @@ From an existing RStudio project:
 
 ```
 git remote add origin https://github.com/MyAccount/MyRepo.git
+git branch -M master
 git push -u origin master
 ```
 
@@ -254,8 +255,8 @@ Modify the project without disturbing its stable state.
 
 Application :
 
-- develop new functionality ;
-- test it, correct bugs ;
+- develop new functionality,
+- test it, correct bugs,
 - make it visible when finished.
 
 
@@ -272,7 +273,7 @@ Move to master branch.
 
 Run:
 ```
-git merge branch_a_merge
+git merge branch_to_merge
 ```
 
 
@@ -331,6 +332,7 @@ Create your repo on GitHub.
 Copy the commands to upload an existing git repo:
 ```
 git remote add origin https://github.com/MyAccount/MyRepo.git
+git branch -M master
 git push -u origin master
 ```
 
@@ -344,15 +346,19 @@ Add a README:
 ```
 memoiR::build_readme()
 ```
-Commit
+Commit.
 
-## Activate CI
+## Continuous integration
 
-run
+On GitHub, your repo, Settings / Secrets and variables / Action :
+
+- Add two secrets:
+  - EMAIL: your email address
+  - GH_PAT: your personal access token
+
+In RStudio, run
 ```
 memoiR::build_ghworkflow()
 ```
 
 Commit, Push and look at Actions.
-
-
