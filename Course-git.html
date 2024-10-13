@@ -9,7 +9,7 @@
 
 
 
-  <meta name="date" content="2024-10-11" />
+  <meta name="date" content="2024-10-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -3144,7 +3144,7 @@ line-height: 1.9;
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">11 October 2024</p>
+            <p style="margin-top: 6px; margin-left: -2px;">13 October 2024</p>
           </hgroup>
   </slide>
 
@@ -3196,17 +3196,19 @@ line-height: 1.9;
 
 <p></p>
 
-</article></slide><slide class=""><hgroup><h2>GitHub security 1</h2></hgroup><article  id="github-security-1">
+</article></slide><slide class=""><hgroup><h2>GitHub security: SSH</h2></hgroup><article  id="github-security-ssh">
 
-<p>Your computer must be able to write to git.</p>
+<p>Your computer must be able to write to git. We choose <strong>SSH authentication</strong> for simplicity.</p>
 
-<p>In RStudio, Tools / Global Options/ Git-SVN, create a new SSH key.</p>
+<ul>
+<li>In RStudio, Tools / Global Options/ Git-SVN, create a new SSH key (no passphrase).</li>
+<li>Click on <em>View public key</em>. Copy the key.</li>
+<li>On GitHub, your accounts, Settings, SSH and GPG keys, Add New SSH Key, paste the key. Name it after your computer.</li>
+</ul>
 
-<p>Copy the private key to GitHub, your accounts, Settings, SSH and GPG keys.</p>
+</article></slide><slide class=""><hgroup><h2>GitHub security: PAT</h2></hgroup><article  id="github-security-pat">
 
-</article></slide><slide class=""><hgroup><h2>GitHub security 2</h2></hgroup><article  id="github-security-2">
-
-<p>Create a GitHub token for CI:</p>
+<p>Create a GitHub token for Continuous Integration:</p>
 
 <ul>
 <li>User account settings;</li>
@@ -3245,17 +3247,17 @@ line-height: 1.9;
 <li><em>Tools /Version Control /Project Setup…</em></li>
 <li>Select <em>Git</em>.</li>
 </ul></li>
-<li><p>Create a repository on GitHub and retrieve its URL: <a href='https://github.com/MyAccount/MyRepo.git' title=''>https://github.com/MyAccount/MyRepo.git</a></p></li>
+<li><p>Create a repository on GitHub and retrieve its URL: <a href='mailto:git@github.com' title=''>git@github.com</a>:MyAccount/MyRepo.git</p></li>
 <li><p>In RStudio Terminal, run :</p></li>
 </ul>
 
-<pre >git remote add origin https://github.com/MyAccount/MyRepo.git
+<pre >git remote add origin git@github.com:MyAccount/MyRepo.git
 git branch -M master
 git push -u origin master</pre>
 
 </article></slide><slide class=""><hgroup><h2>Basic operations: filter</h2></hgroup><article  id="basic-operations-filter">
 
-<p>Modified files are displayed in the RStudio Git window.</p>
+<p>Modified files are displayed in the RStudio <em>git</em> window.</p>
 
 <p>Use .gitignore to hide non-tracked files.</p>
 
@@ -3352,7 +3354,9 @@ git push -u origin master</pre>
 
 </article></slide><slide class=""><hgroup><h2>Create a branch</h2></hgroup><article  id="create-a-branch">
 
-<p>Click on New Branch</p>
+<p>Click on the New Branch button.</p>
+
+<p>Type its name.</p>
 
 <p>Work in the new branch (pull, commit, push).</p>
 
@@ -3414,7 +3418,7 @@ git push -u origin master</pre>
 
 <p>Copy the commands to upload an existing git repo:</p>
 
-<pre >git remote add origin https://github.com/MyAccount/MyRepo.git
+<pre >git remote add origin git@github.com:MyAccount/MyRepo.git
 git branch -M master
 git push -u origin master</pre>
 
