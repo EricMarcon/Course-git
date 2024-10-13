@@ -125,18 +125,18 @@ knitr::include_graphics("images/GitHub_accueil.png")
 ```
 
 
-## GitHub security 1
+## GitHub security: SSH
 
-Your computer must be able to write to git.
+Your computer must be able to write to git. We choose **SSH authentication** for simplicity.
 
-In RStudio, Tools / Global Options/ Git-SVN, create a new SSH key.
+- In RStudio, Tools / Global Options/ Git-SVN, create a new SSH key (no passphrase).
+- Click on *View public key*. Copy the key.
+- On GitHub, your accounts, Settings, SSH and GPG keys, Add New SSH Key, paste the key. Name it after your computer.
 
-Copy the private key to GitHub, your accounts, Settings, SSH and GPG keys.
 
+## GitHub security: PAT
 
-## GitHub security 2
-
-Create a GitHub token for CI:
+Create a GitHub token for Continuous Integration:
 
 - User account settings;
 - Developer Settings > Personal Access Tokens;
@@ -168,19 +168,19 @@ From an existing RStudio project:
   - _Tools /Version Control /Project Setup..._
   - Select _Git_.
 
-- Create a repository on GitHub and retrieve its URL: https://github.com/MyAccount/MyRepo.git
+- Create a repository on GitHub and retrieve its URL: git@github.com:MyAccount/MyRepo.git
 
 - In RStudio Terminal, run :
 
 ```
-git remote add origin https://github.com/MyAccount/MyRepo.git
+git remote add origin git@github.com:MyAccount/MyRepo.git
 git branch -M master
 git push -u origin master
 ```
 
 ## Basic operations: filter
 
-Modified files are displayed in the RStudio Git window.
+Modified files are displayed in the RStudio *git* window.
 
 Use .gitignore to hide non-tracked files.
 
@@ -273,7 +273,9 @@ Application :
 
 ## Create a branch
 
-Click on New Branch
+Click on the New Branch button.
+
+Type its name.
 
 Work in the new branch (pull, commit, push).
 
@@ -342,7 +344,7 @@ Create your repo on GitHub.
 
 Copy the commands to upload an existing git repo:
 ```
-git remote add origin https://github.com/MyAccount/MyRepo.git
+git remote add origin git@github.com:MyAccount/MyRepo.git
 git branch -M master
 git push -u origin master
 ```
