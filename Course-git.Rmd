@@ -82,7 +82,7 @@ set.seed(973)
 ```
 
 
-# Principles
+# Source Control
 
 ## git
 
@@ -144,7 +144,8 @@ Create a GitHub token for Continuous Integration:
 
 Save the token!
 
-# Practical
+
+# Practical 1
 
 ## Create a project
 
@@ -237,7 +238,7 @@ knitr::include_graphics("images/git_history.png")
 ```
 
 
-# Practical
+# Practical 2
 
 ## Generate a conflict
 
